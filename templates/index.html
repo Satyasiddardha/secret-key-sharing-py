@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threshold Secret Sharing Methods</title>
+</head>
+
+<body>
+    <h1>Threshold Secret Sharing Methods</h1>
+
+    <p>Welcome to the homepage for the implementation of three threshold secret sharing methods: Shamir, Blakley, and Mignotte.</p>
+
+    <h2>Select a Method:</h2>
+
+    <ul>
+        <a href=shamir.html><button id="button1" onclick="sendButtonClick('button1')">Shamir</button></a>
+        <a href="blakley"><button id="button2" onclick="sendButtonClick('button2')">Blakley</button></a>
+        <a href="mignotte.html"><button id="button3" onclick="sendButtonClick('button3')">Mignotte</button></a>
+    </ul>
+
+  <script>
+    function sendButtonClick(buttonId) {
+      // Create an XMLHttpRequest object
+      var xhr = new XMLHttpRequest();
+
+      // Define the callback function
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          // Handle the response from the server if needed
+          console.log(xhr.responseText);
+        }
+      };
+
+      // Open a POST request to the Flask route
+      xhr.open("POST", "/button_click", true);
+
+      // Set the request header
+      xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+      // Send the buttonId as JSON data in the request body
+      xhr.send(JSON.stringify({ buttonId: buttonId }));
+    }
+  </script>
+</body>
+
+</html>
