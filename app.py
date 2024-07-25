@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, jsonify
 from shamir import *
 
 app = Flask(__name__)
@@ -205,15 +205,17 @@ def compute_mignotte():
 
 @app.route('/generate_shares', methods=['POST'])
 def generate_shares():
-    secret = int(request.form['secret'])
-    minimum = int(request.form['minimum'])
-    total_shares = int(request.form['total_shares'])
+    try:
+        secret = int(request.form['secret'])
+        minimum = int(request.form['minimum'])
+        total_shares = int(request.form['total_shares'])
+    except ValueError:
+        return jsonify(success=False, error="Invalid input. Please enter valid integers for 'secret', 'minimum', and 'total_shares'."), 400
 
     global shares
     shares = make_random_shares(secret, minimum, total_shares)
     session['minimum'] = minimum
-    return render_template('shamir_shares.html', secret=secret, shares=shares,minimum=minimum)
-
+    return render_template('shamir_shares.html', secret=secret, shares=shares, minimum=minimum)
 @app.route('/recover_secret', methods=['GET', 'POST'])
 def recover_secret_view():
     minimum = session.get('minimum', 0)
