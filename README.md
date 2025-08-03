@@ -1,22 +1,22 @@
-# 🔐 Secret Key Sharing Web Application
+# Secret Key Sharing Web Application
 
 A Flask-based web application that demonstrates various **secret sharing schemes** used in cryptography, including:
 
-- 🧩 **Shamir's Secret Sharing Scheme**
-- 📐 **Blakley's Secret Sharing Scheme**
-- 🧮 **Mignotte's Secret Sharing Scheme**
+- **Shamir's Secret Sharing Scheme**
+- **Blakley's Secret Sharing Scheme**
+- **Mignotte's Secret Sharing Scheme**
 
 These schemes allow a secret to be divided into parts (shares), giving each participant its own unique share. Only a certain threshold of shares is needed to reconstruct the original secret.
 
 ---
 
-## 📚 What is Secret Sharing?
+## What is Secret Sharing?
 
 Secret sharing is a cryptographic technique where a secret (e.g., a password or encryption key) is split into pieces and distributed to multiple participants. Only when a **minimum number of pieces** are combined can the original secret be reconstructed.
 
 ---
 
-## 🧠 Features
+## Features
 
 - Interactive web interface to input and split a secret.
 - Three cryptographic schemes implemented:
@@ -30,7 +30,7 @@ Secret sharing is a cryptographic technique where a secret (e.g., a password or 
 
 ---
 
-## 🚀 Technologies Used
+## Technologies Used
 
 - **Backend:** Python, Flask
 - **Frontend:** HTML (with templates like `shamir.html`, `blakley.html`, `mignotte.html`)
@@ -41,7 +41,7 @@ Secret sharing is a cryptographic technique where a secret (e.g., a password or 
 
 ---
 
-## 🛠️ Project Structure
+## Project Structure
 
 ├── app.py # Flask application logic
 
@@ -71,11 +71,6 @@ Secret sharing is a cryptographic technique where a secret (e.g., a password or 
 
 │ └── result_mignotte.html# Result for Mignotte
 
-yaml
-
-Copy
-
-Edit
 
 ---
 
