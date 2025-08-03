@@ -44,25 +44,39 @@ Secret sharing is a cryptographic technique where a secret (e.g., a password or 
 ## 🛠️ Project Structure
 
 ├── app.py # Flask application logic
+
 ├── shamir.py # Shamir's scheme implementation
+
 ├── blakley.py # Blakley's scheme implementation
+
 ├── mignotte.py # Mignotte's scheme implementation
+
 ├── requirements.txt # Python dependencies
+
 ├── vercel.json # Deployment config (for Vercel)
+
 ├── templates/
+
 │ ├── homepage.html # Home page
+
 │ ├── shamir.html # UI for Shamir's scheme
+
 │ ├── result_shamir.html # Result for Shamir
+
 │ ├── blakley.html # UI for Blakley's scheme
+
 │ ├── result_blakley.html # Result for Blakley
+
 │ ├── mignotte.html # UI for Mignotte's scheme
+
 │ └── result_mignotte.html# Result for Mignotte
 
 yaml
+
 Copy
+
 Edit
 
 ---
 
-## 🛠️ Project Structure
 
